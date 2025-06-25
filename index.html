@@ -2,81 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>hi i'm shadan.</title>
-  <meta name="viewport" content="width=700, initial-scale=1">
-  <style>
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background: #181a20;
-      color: #d6dae4;
-      margin: 0;
-      padding: 0;
-      max-width: 700px;
-      margin-left: 40px;
-    }
-    nav {
-      margin-top: 32px;
-      margin-bottom: 32px;
-    }
-    nav a {
-      color: #4fa3ff;
-      text-decoration: none;
-      margin-right: 24px;
-      font-size: 20px;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #a2d2ff;
-    }
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: #fff;
-      letter-spacing: -2px;
-    }
-    p {
-      font-size: 22px;
-      line-height: 1.5;
-      margin-bottom: 28px;
-      color: #d6dae4;
-      max-width: 600px;
-    }
-    a {
-      color: #4fa3ff;
-      text-decoration: underline;
-      transition: color 0.2s;
-    }
-    a:hover {
-      color: #a2d2ff;
-    }
-    @media (max-width: 800px) {
-      body {
-        margin-left: 10px;
-        margin-right: 10px;
-        max-width: 98vw;
-      }
-    }
-  </style>
+  <title>Shadan | About Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <a href="#">home</a>
-    <a href="#">my yt channel</a>
-    <a href="#">content i like</a>
-  </nav>
-  <h1>hi i'm shadan.</h1>
-  <p>
-    i'm just a person that loves creating things for others.
-  </p>
-  <p>
-    i started my first project when i was very young and have been passionate about building and sharing ever since.
-  </p>
-  <p>
-    i enjoy making things—whether it's writing, coding, or helping others bring their ideas to life.
-  </p>
-  <p>
-    always learning, always building. let's connect!
-  </p>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="https://i.pravatar.cc/80?img=56" alt="Shadan photo" class="profile-photo">
+      <div class="profile-info">
+        <div class="profile-title-row">
+          <span class="profile-name">Shadan</span>
+          <svg class="profile-verified" width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L15 6L21 7L17 11L18 17L12 14L6 17L7 11L3 7L9 6L12 2Z" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="profile-desc">Coding, creating, building things.</div>
+      </div>
+      <div class="profile-actions">
+        <button class="icon-btn" title="GitHub">
+          <svg width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+            <path d="M12 2C6.477 2 2 6.483 2 12.021c0 4.426 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.238-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.528 2.341 1.087 2.91.832.092-.647.35-1.087.636-1.338-2.221-.253-4.555-1.114-4.555-4.951 0-1.093.39-1.987 1.029-2.687-.103-.253-.446-1.273.098-2.656 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.338 1.909-1.296 2.748-1.026 2.748-1.026.546 1.383.202 2.403.1 2.656.64.7 1.028 1.594 1.028 2.687 0 3.848-2.337 4.695-4.566 4.943.359.31.678.921.678 1.857 0 1.34-.012 2.42-.012 2.75 0 .267.18.577.688.48C19.138 20.2 22 16.447 22 12.021 22 6.483 17.522 2 12 2z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" title="Contact">
+          <svg width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+            <path d="M17 8.5V7a5 5 0 0 0-10 0v1.5a5.5 5.5 0 1 0 10 0zM12 21a7 7 0 0 1-7-7V7a7 7 0 1 1 14 0v7a7 7 0 0 1-7 7z"/>
+          </svg>
+        </button>
+        <button class="icon-btn" title="Telegram">
+          <svg width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+            <path d="M22.162 4.399a1.368 1.368 0 0 0-1.338-1.083c-.16 0-.324.027-.482.084L2.334 10.263c-.457.162-.77.603-.77 1.087 0 .484.313.925.77 1.087l4.44 1.57 2.02 6.06c.16.482.585.818 1.09.818h.005c.506-.001.932-.337 1.09-.819l2.02-6.06 4.441-1.57c.456-.162.769-.603.769-1.087a1.11 1.11 0 0 0-.77-1.087z"/>
+          </svg>
+        </button>
+        <button class="resume-btn">Resume</button>
+      </div>
+    </div>
+    <div class="profile-about">
+      <h2>About</h2>
+      <p>
+        I develop interactive web applications using <b>React</b>, <b>Next.js</b>, and <b>Tailwind CSS</b>, while creating powerful mobile apps with <b>React Native</b>.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
